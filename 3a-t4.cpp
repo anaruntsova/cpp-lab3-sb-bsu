@@ -5,19 +5,22 @@ using namespace std;
 
 int main()
 {
-	int i = 1, sum_k = 0, number; double k;
-	cout << " Enter the amount of integers to sum = "; cin >> k;
-    if (k == 0) { cout << "The result can not be calculated due to the number of integers is 0" << endl; }
-	else
-	{
-		do {
-			cout << "Enter integer nr. " << i << ": ";
-			cin >> number;
-			sum_k += number; i++;
-		} while (i <= k);
-		cout << " The total sum of " << k << " integers is: " << sum_k;
-	}
-	return 0;
+    int k, i = 1, sum_k = 0; double number;
+    cout << " Enter the amount of integers to sum = "; cin >> k;
+    do {
+        cout << "Enter integer nr. " << i << ": ";
+        cin >> number;
+        while (number - (int)number != 0)
+        {
+            cout << "The number isn't integer" << endl;
+            cout << "Enter an integer number = ";
+            cin >> number;
+            break;
+        }
+        sum_k += number; i++;
+    } while (i <= k);
+    cout << " The total sum of " << k << " integers is: " << sum_k;
+    return 0;
 }
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
 // Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
